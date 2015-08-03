@@ -1,0 +1,2 @@
+function mainLoop(stage, t) {
+}
