@@ -8,11 +8,12 @@
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
-    "outDir": "../www/lagashmup"
+    "out": "../www/lagashmup/lagashmup.js"
   },
 
   "files":
   [
-    "./lagashmup.ts"
+    "./lagashmup.ts",
+    "./scene.ts"
   ]
 }

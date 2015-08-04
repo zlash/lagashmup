@@ -10,18 +10,25 @@
 <body>
    <script>
 
-    var renderer = PIXI.autoDetectRenderer(480, 600,{backgroundColor : 0x1099bb});
+    var renderer = PIXI.autoDetectRenderer(400, 600,{backgroundColor : 0x1099bb});
     document.body.appendChild(renderer.view);
     var stage = new PIXI.Container();
 
     var prevTS=window.performance.now();
 
-    animate();
+    LagaSHMUp.setupLoader(PIXI.loader);
+
+    PIXI.loader.load(function()
+    {
+      LagaSHMUp.init(stage);
+      animate();
+    });
+
     function animate()
     {
         requestAnimationFrame(animate);
         curTS=window.performance.now();
-        mainLoop(stage, curTS-prevTS);
+        LagaSHMUp.mainLoop(curTS-prevTS);
         prevTS=curTS;
         renderer.render(stage);
     }
